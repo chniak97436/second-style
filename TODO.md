@@ -1,4 +1,6 @@
-# TODO List for Fixing NavBar Component Error
+# TODO for NavBar Enhancements
 
-- [x] Edit `components/NavBar.jsx` to fix Image src path, add required width/height/alt props, update Link href, and remove empty className.
-- [x] Run `npm run dev` to start the development server and verify the NavBar renders without errors.
+- [x] Ajouter des transitions fluides pour les survols des liens (hover effects)
+- [x] Animer l'ouverture/fermeture du menu mobile avec un effet de glissement
+- [x] Améliorer l'esthétique avec un fond en dégradé, de meilleurs styles de boutons et des ombres subtiles
+- [x] Tester le composant dans le navigateur pour vérifier les animations et l'apparence (serveur démarré sur http://localhost:3500)
