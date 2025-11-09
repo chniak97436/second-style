@@ -53,11 +53,11 @@ export default function NavBar() {
                 <span className={`w-8 h-0.5 bg-white my-1 transition-all duration-300 ${isOpen ? 'opacity-0' : ''}`}></span>
                 <span className={`w-8 h-0.5 bg-white transition-all duration-300 ${isOpen ? '-rotate-405 -translate-y-1.5' : ''}`}></span>
             </button>
-            <div className={`absolute top-16 right-0 h-full w-[30%] bg-gradient-to-l from-black via-gray-900 to-black flex flex-col items-center md:hidden shadow-2xl transition-transform duration-500 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+            <div className={`absolute top-16 right-0 h-full w-[30%] bg-gradient-to-l from-black via-gray-900 to-black flex flex-col items-center md:hidden shadow-2xl transition-all duration-500 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-[100%]'}`}>
                 
-                <Link href="/" className={`text-white w-full text-center px-4 py-3 hover:bg-gray-800/70 hover:text-yellow-400 transition-all duration-300 mx-2 ${path === '/' ? 'font-bold underline bg-gray-800 text-yellow-400' : ''}`}>Home</Link>
-                <Link href="/about" className={`text-white w-full text-center px-4 py-3 hover:bg-gray-800/70 hover:text-yellow-400 transition-all duration-300 mx-2 ${path === '/about' ? 'font-bold underline bg-gray-800 text-yellow-400' : ''}`}>About</Link>
-                <Link href="/contact" className={`text-white w-full text-center px-4 py-3 hover:bg-gray-800/70 hover:text-yellow-400 transition-all duration-300 mx-2 ${path === '/contact' ? 'font-bold underline bg-gray-800 text-yellow-400' : ''}`}>Contact</Link>
+                <Link href="/" onClick={() => setIsOpen(!isOpen)} className={`text-white w-full  text-center px-4 py-3 hover:bg-gray-800/70 hover:text-yellow-400 transition-all duration-300 mx-2 ${path === '/' ? 'font-bold underline bg-gray-800 text-yellow-400' : ''}`}>Accueil</Link>
+                <Link href="/hommes" onClick={() => setIsOpen(!isOpen)} className={`text-white w-full text-center px-4 py-3 hover:bg-gray-800/70 hover:text-yellow-400 transition-all duration-300 mx-2 ${path === '/hommes' ? 'font-bold underline bg-gray-800 text-yellow-400' : ''}`}>Hommes</Link>
+                <Link href="/femmes" onClick={() => setIsOpen(!isOpen)} className={`text-white w-full text-center px-4 py-3 hover:bg-gray-800/70 hover:text-yellow-400 transition-all duration-300 mx-2 ${path === '/femmes' ? 'font-bold underline bg-gray-800 text-yellow-400' : ''}`}>Femmes</Link>
             </div>
         </nav>
     );
