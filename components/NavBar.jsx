@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { useState,useRef } from 'react';
+import { useState, useRef } from 'react';
 import { GiBeachBag } from "react-icons/gi";
 import { FaSearch } from "react-icons/fa";
 
@@ -14,11 +14,11 @@ export default function NavBar() {
 
     const inpSearch = useRef(null);
     const SearchBar = () => {
-            if (!isSearchVisible) {
-                setIsSearchVisible(true);
-            } else {
-                setIsSearchVisible(false);
-            }
+        if (!isSearchVisible) {
+            setIsSearchVisible(true);
+        } else {
+            setIsSearchVisible(false);
+        }
     }
 
     return (
@@ -34,20 +34,21 @@ export default function NavBar() {
                 </div>
             )}
             {/*search bar*/}
-            <button type='button' onClick={SearchBar} className='h-16 w-16 absolute right-20 focus transition-all duration-300'>
-                <input type="search" ref={inpSearch} placeholder='Rechercher' name="search" id="search" className={`absolute ${isSearchVisible ? 'block' : 'hidden'} right-20 w-60 bg-white rounded-sm px-2`} />
+            <input type="search" ref={inpSearch} placeholder='Rechercher' name="search" id="search" className={`absolute ${isSearchVisible ? 'block' : 'hidden'} right-35 w-50 bg-white rounded-sm px-2 transition-all duration-300`} />
+
+            <button type='button' onClick={SearchBar} className='h-16 w-16 absolute right-18 focus transition-all duration-300'>
                 <FaSearch className='text-white hover:text-yellow-400 w-5 h-5' />
             </button>
 
             {/*panier button*/}
-            <button type='button' className='h-16 w-16 absolute right-10 focus transition-all duration-300'>
+            <button type='button' className='h-16 w-16 absolute right-8 focus transition-all duration-300'>
                 <Link href="/cart" className=''>
                     <GiBeachBag className='text-white hover:text-yellow-400 w-5 h-5' />
                 </Link>
             </button>
 
             {/* Mobile Menu Button */}
-            <button type='button' onClick={() => setIsOpen(!isOpen)} className='absolute right-4 flex md:hidden flex-col justify-center items-center h-16 w-16 bg-black/50 backdrop-blur-sm rounded-md shadow-md focus:outline-none transition-all duration-300 hover:bg-black/70'>
+            <button type='button' onClick={() => setIsOpen(!isOpen)} className='absolute right-1 flex md:hidden flex-col justify-center items-center h-16 w-16 bg-black/50 backdrop-blur-sm rounded-md shadow-md focus:outline-none transition-all duration-300 hover:bg-black/70'>
                 <span className={`w-8 h-0.5 bg-white transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
                 <span className={`w-8 h-0.5 bg-white my-1 transition-all duration-300 ${isOpen ? 'opacity-0' : ''}`}></span>
                 <span className={`w-8 h-0.5 bg-white transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
